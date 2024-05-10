@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100vw;
+        height: 20vh;
+        text-align: center;
+        padding: 2%;
+        background-color: skyblue;
+    }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+    }
+    div{
+        background-color: silver;
+        border: 1px solid black;
+        /* height: 20vh; */
+        width: 20vw;
+    }
+    footer{
+        
+    }
+</style>
+<body>
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <main>
+        <form action="./respuesta.html" target="_blank" method="get">
+            <div>
+                <label for="apellido">1.Apellido</label><br>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div>
+                <label for="nombre">2.Nombre</label><br>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div>
+                <label for="cont">3.Contraseña</label><br>
+                <input type="password" id="cont" name="cont">
+            </div>
+            <div>
+                <label for="desh">4.Campo Deshabilitado</label><br>
+                <input type="text" disabled value="Deshabilitado" id="desh" name="desh">
+            </div>
+            <div>
+                <label for="fecha">5.Fecha</label><br>
+                <input type="date">
+            </div>
+            <div>
+                <label for="documento">6.DNI</label><br>
+                <input type="text" id="documento" name="documento" pattern="[0-9]{8}" required>
+            </div>
+            <div>
+                <label for="act">7.Actividades Extra Curriculares</label><br>
+                <label for="musica">Música:</label><br>
+                <input type="radio" id="musica" name="act" value="Musica"><br>
+                <label for="pintura">Pintura Artística:</label><br>
+                <input type="radio" id="pintura" name="act" value="Musica">
+            </div>
+            <div>
+                <label for="sexo">8.Sexo</label><br>
+                <label for="m">Masculino:</label><br>
+                <input type="radio" id="m" name="sexo" value="Masculino"><br>
+                <label for="f">Femenino:</label><br>
+                <input type="radio" id="f" name="sexo" value="Femenino">
+            </div>
+            <div>
+                <p>9.Vacío</p>
+            </div>
+            <div>
+                <label for="estudios">10.Estudios Cursados</label><br>
+                <select name="estudios" id="estudios">
+                    <option value="primaria">Primario</option>
+                    <option value="secundaria">Secundario</option>
+                    <option value="terciario">Terciario</option>                    
+                </select>
+            </div>
+            <div>
+                <label for="area">11.Area de desempeño</label><br>
+                <select name="area" id="area">
+                    <option value="administracion">Administración</option>
+                    <option value="antenimiento">Mantenimiento</option>
+                    <option value="recepcion">Recepción</option>                    
+                </select>
+            </div>
+            <div>
+                <label for="turno">12.Turno</label><br>
+                <select name="turno" id="turno">
+                    <option value="mañana">Mañana</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noche">Noche</option>                    
+                </select>
+            </div>
+            <div>
+                <label for="conduce">13.Conduce</label><br>
+                <label for="si">Si:</label>
+                <input type="radio" id="si" name="conduce" value="si">
+                <label for="no">No:</label>
+                <input type="radio" id="no" name="conduce" value="no">
+            </div>
+            <div>
+                <button>Enviar</button>
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </main>
+    <footer>
+        Pie de formulario
+    </footer>
+</body>
+</html>

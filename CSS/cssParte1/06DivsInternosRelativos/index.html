@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Internos Relativos</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: blue;
+    }
+    main{
+        background-color: bisque;
+        width: 80vw;
+        /* display: inline-block; */
+        height:auto;
+        position: relative;
+        left: 3%;
+        top: 0px;
+        padding-bottom: 10.3%;
+    }
+    h3{
+        padding: 1%;
+    }
+    div:nth-child(2){
+        background-color: green;
+        width: 80%;
+        height: 80px;
+        position: relative;
+        top: 10px;
+        left: 0%;
+    }
+    div:nth-child(3){
+        background-color: green;
+        width: 80%;
+        height: 80px;
+        position: relative;
+        top: 20px;
+        left: 0%;
+    }
+    div:nth-child(4){
+        background-color: yellow;
+        position: relative;
+        top: 40px;
+        width: 60%;
+        margin: auto;
+    }
+    div.amarillo{
+        background-color: yellow;
+        position: relative;
+        top: 50px;
+        width: 60%;
+        margin: auto;
+    }
+    div.amarillo2{
+        top: 100px;
+    }
+    div:nth-child(10){
+        background-color: brown;
+        width: 60%;
+        height: 120px;
+        position: relative;
+        left: 30%;
+        top: 80px;
+        overflow: scroll;
+    }
+    div.imagen{
+        width: 60%;
+        border: solid 4px yellow;
+        position: relative;
+        margin: auto;
+        top: 130px;
+    }
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    div.modal{
+        background-color: violet;
+        width: 50%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -300px;
+        opacity: 0.8;
+        border-top-left-radius: 8px;
+    }
+    div.modal p{
+        padding: 5%;
+    }
+</style>
+<body>
+    <main>
+        <div class="marco">
+            <h1>Contenedores Relativos</h1>
+            <div>
+                <h3>
+                    Contenedor Relativo Clase 1
+                </h3>
+            </div>
+            <div>
+                <h3>
+                    Contenedor Relativo Clase 1
+                </h3>
+            </div>
+            <div>
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            
+            <div class="amarillo">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div>
+                <h3>Contenedor Relativo clase 3</h3>
+                <p>
+                    textotextotextotexto <br>
+                    textotextotextotexto <br>
+                    textotextotextotexto <br>
+                    textotextotextotexto <br>
+                    textotextotextotexto <br>
+                    textotextotextotexto <br>   
+                </p>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="amarillo amarillo2">
+                <h3>
+                    Contenedor Relativo Clase 2
+                </h3>
+            </div>
+            <div class="imagen">
+                <img src="./tigre.jpg" alt="tigre">
+            </div>
+            <div class="modal">
+                <p>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                    Contenedor modal <br>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

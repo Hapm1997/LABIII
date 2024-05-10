@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Internos en Columnas</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main{
+        width: 80vw;
+        margin: auto;
+    }
+    div.tam{
+        float: left;
+        width: 100%;
+        background-color: aqua;
+    }
+    div.estilo{
+        width: 150px;
+        float: left;
+        margin: 2%;
+        padding: 2%;
+        background-color: beige;
+    }
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    @media (max-width:600px) {
+        div.estilo{
+            background-color: yellow;
+        }
+    }
+</style>
+<body>
+    <main>
+        <div class="tam">
+            <h1>
+                Encolumnado sin tablas
+            </h1>
+            <div class="estilo">
+                <p>
+                    Artículo 1 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna
+                </p>
+                <img src="./peru01.jpg" alt="Imagen colores">
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 2 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna
+                </p>
+                <img src="./peru02.jpg" alt="Imagen montañas">
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 3 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 4 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 5 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 6 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+                <img src="./peru03.jpeg" alt="Imagen condor">
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 7 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+            </div>
+            <div class="estilo">
+                <p>
+                    Artículo 8 Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                    Datos para incluir en esta columna Datos para incluir en esta columna Datos para incluir en esta columna 
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
