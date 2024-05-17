@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Objetos</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    div#cont{
+        width: 60vw;
+        height: 60vh;
+        overflow: scroll;
+        background-color: bisque;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    div.estilo{
+        position: relative;
+        height: 20%;
+        background-color: aqua;
+        margin: 1%;
+        width: 80%;
+    }
+</style>
+<body>
+    <input type="button" name="crear" id="crear" value="Crear">
+    <input type="button" name="limpiar" id="limpiar" value="Limpiar">
+    <input type="button" name="info" id="info" value="Info">
+    <div id="cont"></div>
+    <script>
+        
+        function crear(){
+            objDiv = document.createElement("div");
+            textHtml = "<h1>Elemento Creado:";
+            textHtml = textHtml + document.getElementById("cont").childNodes.length;
+            textHtml = textHtml + "</h1>";
+            objDiv.innerHTML = textHtml;
+            objDiv.className="estilo";
+            document.getElementById("cont").appendChild(objDiv);
+        }
+        // textHtml = textHtml + document.getElementById("cont").childNodes.length;
+        // textHtml = textHtml + "</h1>";
+        // objDiv.innerHTML = textHtml;
+        // objDiv.className="estilo";
+        document.getElementById("crear").addEventListener("click" ,function(){
+            crear();
+        })
+        function limpiar(){
+            while(document.getElementById("cont").childNodes.length>0){
+                document.getElementById("cont").removeChild(document.getElementById("cont").childNodes[0]);
+            }
+        }
+        document.getElementById("limpiar").addEventListener("click" ,function(){
+            limpiar();
+        })
+        document.getElementById("info").addEventListener("click",function(){
+            alert("Divs creados: "+document.getElementById("cont").childNodes.length);
+            document.getElementById("cont").childNodes.forEach(function(item,indice){
+                alert("Indice: "+indice+ " - innerHTML: <h1>Elemento creado "+indice+"</h1>");
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Compartidas</title>
+</head>
+<style>
+    div{
+        width: 60vw;
+        height: 60vh;
+        background-color: aqua;
+        margin: auto;
+        padding: 2%;
+    }
+    div div{
+        padding: 0;
+        width: 90%;
+        height: 60%;
+        margin-top: auto;
+        background-color: gray;
+    }
+    div div input{
+        width: 99%;
+    }
+    div.btns{
+        display: flex;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        align-content: space-evenly;
+        justify-content: center;
+    }
+    div.btnsNum button{
+        height: 20%;
+        width: 25%;
+        margin: 3%;
+    }
+    div.btnsFunc{
+        height: 40%;
+        background-color: bisque;
+        display: flex;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        align-content: space-evenly;
+        justify-content: center;
+    }
+    div.btnsFunc button{
+        height: 20%;
+        width: 30%;
+        margin: 3%;
+    }
+</style>
+<body>
+    <div>
+        <div>
+            <input type="text" id="display" name="display">
+            <div class="btnsNum">
+                <button id="uno">1</button>
+                <button id="dos">2</button>
+                <button id="tres">3</button>
+                <button id="cuatro">4</button>
+                <button id="cinco">5</button>
+                <button id="seis">6</button>
+                <button id="siete">7</button>
+                <button id="ocho">8</button>
+                <button id="nueve">9</button>
+            </div>            
+        </div>
+        <div class="btnsFunc">
+            <button id="mas">+</button>
+            <button id="acum">Muestra Acumulador</button>
+            <button id="borraAcum">Borra Acumulador</button>
+            <button id="borraDisplay">Borra display</button>
+        </div>
+    </div>
+    <script>
+        var acum = 0;
+        // function poner(){
+        //     var uno = document.getElementById("uno");
+        //     var dos = document.getElementById("dos");
+        //     var tres = document.getElementById("tres");
+        //     var cuatro = document.getElementById("cuatro");
+        //     var cinco = document.getElementById("cinco");
+        //     var seis = document.getElementById("seis");
+        //     var siete = document.getElementById("siete");
+        //     var ocho = document.getElementById("ocho");
+        //     var nueve = document.getElementById("nueve");
+        //     pantalla = pantalla + uno;
+        //     document.getElementById("display").value = pantalla;
+        // }
+        document.getElementById("uno").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 1
+        })
+        document.getElementById("dos").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 2;
+        })
+        document.getElementById("tres").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 3;
+        })
+        document.getElementById("cuatro").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 4;
+        })
+        document.getElementById("cinco").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 5
+        })
+        document.getElementById("seis").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 6;
+        })
+        document.getElementById("siete").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 7;
+        })
+        document.getElementById("ocho").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 8;
+        })
+        document.getElementById("nueve").addEventListener("click" , function(){
+            pantalla = document.getElementById("display").value;
+            document.getElementById("display").value = pantalla + 9;
+        })
+        function sumaAcum(){
+            acum = acum + parseInt(document.getElementById("display").value); 
+            return acum;
+        }
+        function borrarDisplay(){
+            document.getElementById("display").value = "";
+        }
+        document.getElementById("mas").addEventListener("click" , function(){
+            sumaAcum();   
+            document.getElementById("display").value = "";         
+        })
+        document.getElementById("borraDisplay").addEventListener("click" , function(){
+            document.getElementById("display").value = "";
+        })  
+        document.getElementById("acum").addEventListener("click",function(){            
+            alert(acum);
+        })
+        document.getElementById("borraAcum").addEventListener("click" ,function(){
+            acum = 0;
+        })
+    </script>
+</body>
+</html>

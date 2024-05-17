@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio Dinámico de estilo</title>
+</head>
+<style>
+    div{
+        width: 40vw;
+        margin: auto;
+        padding: 2%;
+    }
+    ol{
+        list-style: none;
+    }
+    div.estilo1{
+        background-color: aliceblue;
+        border: double    blue 3px;        
+    }
+    h2.titulo1{
+        font-style: italic;
+        color: violet;
+    }
+    ol.lista1{
+        color:brown;
+        list-style: square;
+    }
+    /* ---------------------------- */
+    div.estilo2{
+        background-color: #070743;
+        border: outset    #ab0768 5px;        
+    }
+    h2.titulo2{
+        font-style: italic;
+        color: #169d99;
+    }
+    ol.lista2{
+        color:#fae894;
+        list-style: inside;
+    }
+    /* ---------------------------- */
+    div.estilo3{
+        background-color: #bff1ce;
+        border: dashed    #2e0527 3px;        
+    }
+    h2.titulo3{
+        font-style:normal;
+        color: #6e837c;
+    }
+    ol.lista3{
+        color:#2e0527;
+        list-style: lower-alpha;
+    }
+    /* ---------------------------- */
+    div.estilo4{
+        background-color: #6f95ff;
+        border: dotted    #1c0b2b 3px;        
+    }
+    h2.titulo4{
+        font-style:oblique;
+        color: #301c41;
+    }
+    ol.lista4{
+        color:#1c0b2b;
+        list-style: lower-greek;
+    }
+</style>
+<body>
+    <h1>Ejemplo de cambios de estilo dinámicamente</h1>
+    <div id="cont">
+        <h2 id="titulo">Lista con estilo</h2>
+        <ol id="lista">
+            <li>Texto 1</li>
+            <li>Texto 2</li>
+            <li>Texto 3</li>
+        </ol>
+    </div>
+    <div>
+        <input type="button" value="Estilo 1" id="btnUno">
+        <input type="button" value="Estilo 2" id="btnDos">
+        <input type="button" value="Estilo 3" id="btnTres">
+        <input type="button" value="Estilo 4" id="btnCuatro">
+    </div>
+    <script>
+        document.getElementById("btnUno").addEventListener("click", function(){
+            document.getElementById("cont").className="estilo1";
+            document.getElementById("titulo").className="titulo1";
+            document.getElementById("lista").className="lista1";
+        })
+        document.getElementById("btnDos").addEventListener("click", function(){
+            document.getElementById("cont").className="estilo2";
+            document.getElementById("titulo").className="titulo2";
+            document.getElementById("lista").className="lista2";
+        })
+        document.getElementById("btnTres").addEventListener("click", function(){
+            document.getElementById("cont").className="estilo3";
+            document.getElementById("titulo").className="titulo3";
+            document.getElementById("lista").className="lista3";
+        })
+        document.getElementById("btnCuatro").addEventListener("click", function(){
+            document.getElementById("cont").className="estilo4";
+            document.getElementById("titulo").className="titulo4";
+            document.getElementById("lista").className="lista4";
+        })
+    </script>
+</body>
+</html>

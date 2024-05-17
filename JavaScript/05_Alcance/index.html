@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcance</title>
+</head>
+<style>
+    button{
+        width: 30%;
+    }
+</style>
+
+<body>
+    <button id="botonUno">
+        Inicializacion desde adentro de un procedimiento
+    </button>
+    <button id="botonDos">
+        Inicializacion forzada desde adentro de un procedimiento
+    </button>
+    <button id="botonTres">
+        Muestra variable global
+    </button>
+    <script>
+        
+        document.getElementById("botonUno").addEventListener("click",function(){
+            var a = prompt("Ingrese un valor para esta variable");
+            alert('El valor de la variable es: ' +a);
+            alert('El tipo de la variable es: ' +typeof(a));
+        })
+
+        document.getElementById("botonDos").addEventListener("click",function(){
+            a = prompt("Ingrese un valor para esta variable");
+            alert('El valor de la variable es: ' +a);
+            alert('El tipo de la variable es: ' +typeof(a));
+        })
+        document.getElementById("botonTres").addEventListener("click" , function(){
+            alert(a);
+            alert('El valor de la variable es: ' +a);
+            alert('El tipo de la variable es: ' +typeof(a));
+        })
+    </script>
+</body>
+</html>

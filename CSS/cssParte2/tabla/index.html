@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    header{
+        display:flex;
+        background-color: aqua;
+        width: 100%;
+        height: 15vh;
+        align-items: center;
+    }
+    header h1{
+        margin: auto;
+    }
+    main{
+        width: 100%;
+        height: 80vh;
+        overflow: scroll;
+    }
+    table, th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    table{
+        width: 100%;
+        height: auto;   
+    }
+    thead tr{
+        background-color: #9c667d;
+        font-weight: bolder;
+        height: 10vh;
+        font-size: larger;
+    }
+    tbody tr{
+        text-align: center;
+        background-color: #ce938b;
+    }
+    tbody tr:nth-child(odd){
+        background-color: #e3e1b1;
+    }
+    img{
+        max-width: 100%;
+    }
+    [campo-dato="desc"]{
+        width: 30%;
+        padding: 1%;
+    }
+    [campo-dato="port"]{
+        width: 20%;
+    }
+    footer{
+        width: 100%;
+        height: 15vh;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+    }
+    footer p{
+        margin: auto;
+    }
+    @media (max-width:1200px) {
+        [campo-dato="desc"]{
+            display: none;
+        }
+    }
+    @media (max-width:600px) {
+        [campo-dato="desc"]{
+            display: none;
+        }
+        [campo-dato="port"]{
+            display: none;
+        }
+        table tbody tr td{
+            height: 10vh;
+        }
+    }
+</style>
+<body>
+    <header>
+        <h1>Tabla Responsiva</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estreno</th>
+                    <th>Género</th>
+                    <th>Director</th>
+                    <th campo-dato="desc">Descripción</th>
+                    <th campo-dato="port">Portada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>La Sospecha</td>
+                    <td>2013</td>
+                    <td>Suspenso</td>
+                    <td>Denis Villeneuve</td>
+                    <td campo-dato="desc">Keller Dover se enfrenta a la peor pesadilla para un padre: la desaparición de su hija de seis años junto a una amiga. Ante la inoperancia policial, Keller empieza a investigar una casa rodante que se encontraba estacionada en su calle.</td>
+                    <td campo-dato="port"><img src="https://m.media-amazon.com/images/S/pv-target-images/d66cf45805456e8499f03f6ce7129b135e09a043639705fea6701b07fb9dd618.jpg" alt="Portada La Intriga"></td>
+                </tr>
+                <tr>
+                    <td>El Juez</td>
+                    <td>2014</td>
+                    <td>Drama</td>
+                    <td>David Dobkin</td>
+                    <td campo-dato="desc">Hank Palmer, un importante abogado, regresa a su hogar tras la muerte de su madre. Se entera entonces de que su padre, un juez alcohólico con quien no se trata, es sospechoso de haber cometido un crimen. Hank decide investigar el caso.</td>
+                    <td campo-dato="port"><img src="https://cdn.playpilot.tech/cad5f9c0889211ecb65c0a58a9feac02/src/img?optimizer=image&quality=75&width=1280&aspect_ratio=16%3A9" alt="Portada El Juez"></td>
+                </tr>
+                <tr>
+                    <td>Cuando acecha la maldad</td>
+                    <td>2023</td>
+                    <td>Terror</td>
+                    <td>Demián Rugna</td>
+                    <td campo-dato="desc">Los vecinos de un pequeño pueblo rural descubren que un demonio está a punto de nacer entre ellos. Intentan escapar desesperadamente, pero puede que sea demasiado tarde.</td>
+                    <td campo-dato="port"><img src="https://tvazteca.brightspotcdn.com/50/fb/679fb163485b9791937eaae927f7/whatsapp-image-2024-01-19-at-11-20-45-am.jpeg" alt="Portada Cuando Acecha la Maldad"></td>
+                </tr>
+                <tr>
+                    <td>Beautiful Boy: siempre serás mi hijo</td>
+                    <td>2018</td>
+                    <td>Drama</td>
+                    <td>Felix Van Groeningen</td>
+                    <td campo-dato="desc">David Sheff es un reconocido periodista de renombre que intenta ayudar a su hijo mayor, Nic, quien, a pesar de sus buenas calificaciones en la escuela, es adicto a la metanfetamina.</td>
+                    <td campo-dato="port"><img src="https://m.media-amazon.com/images/S/pv-target-images/06b2d7d9fc183723f197569fdf8e85e41f055bcedc003a6940551b99b63444af.jpg" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Anatomía de una caída</td>
+                    <td>2023</td>
+                    <td>Crimen</td>
+                    <td>Justine Triet</td>
+                    <td campo-dato="desc">Sandra, su esposo Samuel y su hijo viven una vida solitaria en los Alpes franceses. Cuando Samuel es encontrado muerto y Sandra es la principal sospechosa de presunto homicidio, el juicio pasa a ser un viaje psicológico a su conflictiva relación.</td>
+                    <td campo-dato="port"><img src="https://www.accioncine.es/wp-content/uploads/2023/12/anatomia-de-una-caida.jpg" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Fragmentado</td>
+                    <td>2016</td>
+                    <td>Misterio</td>
+                    <td>M. Night Shyamalan</td>
+                    <td campo-dato="desc">Kevin, un hombre con 23 personalidades, secuestra a 3 chicas jóvenes y las mantiene retenidas en un sótano. A medida que una de sus personalidades va imponiéndose al resto, la vida de las chicas, y la del propio Kevin, peligra cada vez más.</td>
+                    <td campo-dato="port"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/CF5B2707C4E1FA8F0FEC34AF4D0BA84759584C16EA1F26CD9E659C567BF7A5B3/scale?width=1200&aspectRatio=1.78&format=jpeg" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Lady Bird</td>
+                    <td>2017</td>
+                    <td>Comedia/Drama</td>
+                    <td>Greta Gerwig</td>
+                    <td campo-dato="desc">Marion McPherson, una enfermera de California, trabaja incansablemente para sustentar a su familia desde que su esposo quedó desempleado. Marion tiene problemas con su hija adolescente, de inclinaciones artísticas y temperamento fuerte.</td>
+                    <td campo-dato="port"><img src="https://elmontonero.pe/upload/uploads_images/editorial_cultura_18.jpg" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Infierno en la torre</td>
+                    <td>1974</td>
+                    <td>Acción/Suspenso</td>
+                    <td>John Guillermin</td>
+                    <td campo-dato="desc">Un edificio de 35 pisos es la más imponente y moderna obra de ingeniería de la ciudad. En la noche de la inauguración, se produce un incendio en la torre, lo que termina exponiendo el lado más mezquino de la ambición humana.</td>
+                    <td campo-dato="port"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdwkp8QwF3QACDPcC74R_ZRKLktL4ni8a4pBuetEi6Jg&s" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Capitán Fantástico</td>
+                    <td>2016</td>
+                    <td>Comedia/Aventura</td>
+                    <td>Matt Ross</td>
+                    <td campo-dato="desc">Ben y su esposa Leslie llevan años criando a sus seis hijos en los bosques del estado de Washington, sin tecnología o comodidades propias del mundo moderno. Cuando ella muere, Ben, ahora viudo, decide llevarlos de vuelta a la civilización, pero el contraste entre estos dos mundos resulta muy duro para todos ellos.</td>
+                    <td campo-dato="port"><img src="https://i.ytimg.com/vi/X30eIulkcEY/sddefault.jpg" alt="Portada"></td>
+                </tr>
+                <tr>
+                    <td>Zodiaco</td>
+                    <td>2007</td>
+                    <td>Suspenso/Crimen</td>
+                    <td>David Fincher</td>
+                    <td campo-dato="desc">Investigadores y reporteros se obsesionan con el hecho de encontrar a un elusivo asesino en serie que aterroriza el área de San Francisco en los años sesenta y setenta.</td>
+                    <td campo-dato="port"><img src="https://www.cronista.com/files/image/496/496836/639b00e6ca179.jpg" alt="Portada"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Pie</p>
+    </footer>
+</body>
+</html>

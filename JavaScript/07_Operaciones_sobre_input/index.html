@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones sobre input</title>
+</head>
+<body>
+    <h1>Introducir un valor en el cuadro de texto y luego pulsar el boton para ejecutar el procedimiento correspondiente</h1>
+    <input type="text" name="uno" id="uno">
+    <button id="botonUno">Muestra Valor</button>
+    <button id="botonDos">Suma 1</button>
+    <button id="botonTres">X""2</button>
+    <button id="botonCuatro">Multiplica * 2</button>
+    <button id="botonCinco">2""x</button>
+    <script>
+        
+        document.getElementById("botonUno").addEventListener("click" , function(){
+            var entrada1 = document.getElementById("uno");
+            alert(entrada1.value);
+        })
+        document.getElementById("botonDos").addEventListener("click" , function(){
+            entradaUno = parseInt(document.getElementById("uno").value , 10);
+            c = entradaUno + 1;
+            document.getElementById("uno").value= c;
+        })
+        document.getElementById("botonTres").addEventListener("click" , function(){
+            entradaUno = parseInt(document.getElementById("uno").value , 10);
+            c = entradaUno * entradaUno;
+            document.getElementById("uno").value= c;
+        })
+        document.getElementById("botonCuatro").addEventListener("click" , function(){
+            entradaUno = parseInt(document.getElementById("uno").value , 10);
+            c = entradaUno * 2;
+            document.getElementById("uno").value= c;
+        })
+        document.getElementById("botonCinco").addEventListener("click" , function(){
+            entradaUno = parseInt(document.getElementById("uno").value , 10);
+            c = 2;
+            for (let i = 1; i < entradaUno; i++) {
+                c = c * 2 ;
+            }
+            document.getElementById("uno").value= c;
+        })
+    </script>
+</body>
+</html>

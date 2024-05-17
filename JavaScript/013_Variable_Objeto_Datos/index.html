@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Objetos Datos</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    div{
+        width: 80%;
+        /* height: 60vh; */
+        margin: auto;
+        padding-bottom: 2%;
+        background-color: #fffbb7;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        color: #4f2958;
+    }
+    h2{
+        margin: 2%;
+    }
+    p{
+        width: 20%;
+        text-align: center;
+    }
+    input{
+        margin: 1%;
+        width: 20%;
+        /* border-bottom: solid black 1px; */
+    }
+    button{
+        padding: 0.5%;
+    }
+    div.control{
+        margin-top: 2%;
+        background-color: #66b6ab;
+        width: 80%;
+        height: 50%;
+        flex-direction: row;
+    }
+    div.control h2{
+        width: 100%;
+        text-align: center;
+    }
+    div.control button{
+        margin: 1%;
+    }
+    div.lista{
+        display: none;
+        background-color: #a6f6af;
+        /* margin-top: 2%; */
+        padding: 2%;
+    }
+    div.lista h1{
+        margin: 2%;
+    }
+    table , th , td {
+        border: #a6f6af solid 3px;
+        border-collapse: collapse;
+    }
+    table{
+        width: 80%;
+        margin: 2%;
+    }
+    table thead{
+        background-color:#5b7c8d;
+        color: #a6f6af;
+    }
+    th{
+        width: 10%;
+        height: 5vh;
+    }
+    table tbody tr:nth-child(odd){
+        background-color:#fffbb7;
+        color: #4f2958;
+    }
+    table tbody tr:nth-child(even){
+        background-color:#4f2958;
+        color: #fffbb7;
+    }
+</style>
+<body>
+    <h1>
+        Consignas del Ejercicio
+    </h1>
+    <h3>
+        Declarar y hacer uso de Objetos de dato (datos de tipo de Objeto)
+    </h3>
+    <h3>Cargar de 2 personas a un array por programa</h3>
+    <h3>Dejar de usar la funcion prompt() para el ingreso de datos. Armar un contenedor para el ingreso de datos desde consola(solo inputs, sin formulario)</h3>
+    <h3>Dejar de usar document.write y escribir contenido dentro de un elemento html (puede ser un div)</h3>
+    <h3>Dos botones de para llamar a dos funciones. Una para cargar un nuevo objeto de dato por teclado y otra para mostrar  en formato de tabla el array completo de elementos con su longitud</h3>
+    <h3>Un tercer procedimiento para ocultar el elemento de presentacion (usando el parametro de estilo display:none)</h3>
+    <div>
+        <h2>Película para agregar</h2>
+        <p class="parr">Nombre</p>
+        <input type="text" id="nombre">
+        <p>Fecha de estreno</p>
+        <input type="text" id="estreno">
+        <p>Director</p>
+        <input type="text" id="director">
+        <p>Género</p>
+        <input type="text" id="genero"><br>
+        <button id="btnCrear">Agregar Película</button>
+    </div>
+    <div class="control">
+        <h2>Control</h2>
+        <button id="btnLista">Lista</button>
+        <button id="btnOcultar">Ocultar</button>
+    </div>
+
+    <br>
+    <div class="lista" id="lista"></div>
+    <script>
+        var objPel = {nombre:"La Sospecha", estreno:"2013" , director:"Denis Villeneuve" , genero:"Suspenso/Crimen"};
+        var arregloPel = [objPel];
+        arregloPel.push({nombre:"Anatomía de una caída", estreno:"2023" , director:"Justine Triet" , genero:"Crimen/Suspenso"});
+        
+        function tabla(){
+            var texto ="<h1>Lista</h1>";
+            texto = texto + "<table>";
+                texto = texto + "<thead>";
+                    texto = texto + "<tr>";
+                        texto = texto + "<th>Nombre</th>";
+                        texto = texto + "<th>Estreno</th>";
+                        texto = texto + "<th>Director</th>";
+                        texto = texto + "<th>Género</th>";
+                    texto = texto + "</tr>"
+                texto = texto + "</thead>";
+                texto = texto + "<tbody>";
+                    arregloPel.forEach(function(item,indice){
+                        texto = texto + "<tr>";
+                            texto = texto + "<th>" + item.nombre + "</th>";
+                            texto = texto + "<th>" + item.estreno + "</th>";
+                            texto = texto + "<th>" + item.director + "</th>";
+                            texto = texto + "<th>" + item.genero + "</th>";                        
+                        texto = texto + "</tr>";                        
+                    });    
+                texto = texto + "</tbody>";
+            texto = texto + "</table>";
+            texto = texto + "<h4>Longitud del arreglo de objetos: "+arregloPel.length+"</h4>"
+            document.getElementById('lista').innerHTML=texto;
+
+        }
+        document.getElementById("btnCrear").addEventListener("click" , function(){
+            nombreInp = document.getElementById("nombre").value;
+            estrenoInp = document.getElementById("estreno").value;
+            directorInp = document.getElementById("director").value;
+            generoInp = document.getElementById("genero").value;
+            arregloPel.push({nombre:nombreInp, estreno:estrenoInp , director:directorInp , genero:generoInp});
+            tabla();
+        })
+        document.getElementById("btnLista").addEventListener("click" , function(){
+            document.getElementById("lista").style.display = "flex";
+            tabla();
+        });
+        document.getElementById("btnOcultar").addEventListener("click" , function(){
+            document.getElementById("lista").style.display = "none";
+        });
+    </script>
+</body>
+</html>
