@@ -1,0 +1,49 @@
+var text = [
+    {
+        "nombre":"Robot Dreams",
+        "director":"Pablo Berger",
+        "estreno":"2023",
+        "duracion":"01h:42min",
+        "geenero":"Musical/Comedia",
+        "poster":"https://www.accioncine.es/wp-content/uploads/2023/12/robot-dreams.jpg"
+    },
+    {
+        "nombre":"Babylon",
+        "director":"Damien Chazelle",
+        "estreno":"2022",
+        "duracion":"03h:09min",
+        "geenero":"Comedia/Drama",
+        "poster":"https://media.licdn.com/dms/image/D4E12AQH7XWs39AHa2g/article-cover_image-shrink_600_2000/0/1674082623456?e=2147483647&v=beta&t=HNwqYdn-XtFyn2L-472JFUUqc-S_gpoaXga-ms--w2A"
+    },
+    {
+        "nombre":"Whiplash: música y obsesión",
+        "director":"Damien Chazelle",
+        "estreno":"2014",
+        "duracion":"01h:47min",
+        "geenero":"Drama/Cine independiente",
+        "poster":"https://m.media-amazon.com/images/S/pv-target-images/e4f56b73c907fb3b7e43d3522bb6c1812d624ee8448f0bec24247789951f34e5.jpg"
+    },
+    {
+        "nombre":"Paranoia",
+        "director":"D.J. Caruso",
+        "estreno":"2007",
+        "duracion":"01h:45min",
+        "geenero":"Suspenso/Misterio",
+        "poster":"https://www.quever.news/u/fotografias/m/2024/5/19/f608x342-71606_101329_3629.jpg"
+    },
+    {
+        "nombre":"Anatomía de una caída",
+        "director":"Justine Triet",
+        "estreno":"2023",
+        "duracion":"02h:31min",
+        "geenero":"Crimen/Suspenso",
+        "poster":"https://www.accioncine.es/wp-content/uploads/2023/12/anatomia-de-una-caida.jpg"
+    },
+    {
+        "nombre":"Días perfectos",
+        "director":"Wim Wenders",
+        "estreno":"2023",
+        "duracion":"02h:05min",
+        "geenero":"Drama/Ficción",
+        "poster":"https://assets.mubicdn.net/images/artworks/674419/images-original.png?1711024891"
+}]

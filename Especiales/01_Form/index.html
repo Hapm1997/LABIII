@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .centrar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    header{
+        width: 100vw;
+        height: 10vh;  
+        background-color: antiquewhite;      
+    }
+    main{
+        width: 100vw;
+        height: 80vh;
+        background-color: aqua;
+    }
+    main form{
+        width: 60%;
+        height: 100%;
+        /* background-color: blue; */
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main form div{
+        width: 45%;
+        transition: 1s;
+        
+        /* background-color: aquamarine; */
+        /* border: solid black 1px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    main form div:nth-child(5){
+        width: 90%;
+        flex-direction: column;
+    }
+    main form div:nth-child(5) select{
+        width: 30%;
+    }
+    main form div:nth-child(6){
+        width: 90%;
+    }
+    main form div:nth-child(6) input{
+        height: 40%;
+    }
+    span{
+        width: 60%;
+        transition: 1s;
+    }
+    span:hover{
+        border: 1px solid black;
+    }
+    input{
+        margin-bottom: 5%;
+        margin: 2%;
+        width: 50%;
+    }
+    select{
+        width: 50%;
+    }
+    footer{
+        width: 100vw;
+        height: 10vh;
+        background-color: antiquewhite;
+    }
+    option.elementoOptionSelect{
+        height: 10vh;
+    }
+</style>
+<body>
+    <header class="centrar">
+        <h1>Formulario de alta de pacientes</h1>
+    </header>
+    <main>
+        <form id="miForm">
+            <div class="">
+                <label for="mascota">Nombre de mascota:</label><br>
+                <input type="text" id="mascota" name="mascota" required>
+                <span></span>
+            </div>
+            <div class="">
+                <label for="dueno">Nombre de dueño:</label><br>
+                <input type="text" id="dueno" name="dueno" required>
+                <span></span>
+            </div>
+            <div class="">
+                <label for="registro">Fecha de registro:</label><br>
+                <input type="date" id="registro" name="registro" required><br>
+                <span></span>
+            </div>
+            <div class="">
+                <label for="peso">Peso:</label><br>
+                <input type="number" id="peso" name="peso" step="0.1" required><br>      
+                <span></span>          
+            </div>
+            <div class="centrar">
+                <label for="consulta">Tipo de consulta</label><br>
+                <select name="consulta" id="consulta" required>
+                </select><br>
+                <span></span>
+            </div>
+            <div class="centrar">
+                <input type="button" value="Enviar" id="enviar">
+                <input type="button" value="Reset" id="resetear">
+            </div>
+        </form>
+    </main>
+    <footer class="centrar">
+        <h2>Pie del Formulario</h2>
+    </footer>
+    <script src="../ejemplo.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        txtUno = text;
+        function crear(){
+            txtUno.forEach(function(item,indice){
+                var objOpcion = document.createElement("option");
+                objOpcion.setAttribute("value",item.nombre);
+                objOpcion.innerHTML = item.legajo;
+                document.getElementById("consulta").appendChild(objOpcion);
+            });
+        }
+        document.getElementById("resetear").addEventListener("click",function(){
+            document.getElementById("miForm").reset();
+        })
+        
+        document.getElementById("enviar").addEventListener("click",function(){
+            if(document.getElementById("miForm").checkValidity()){
+                var confirma = confirm("¿Estas segro de enviar el formulario?");
+                if(confirma){
+                    document.getElementById("miForm").method = "get";
+                    document.getElementById("miForm").action ="./respuesta.html";
+                    document.getElementById("miForm").submit();
+                }
+            }else{
+                alert("Complete todos los requisitos");
+            }
+        })
+        crear();
+    </script>
+</body>
+</html>

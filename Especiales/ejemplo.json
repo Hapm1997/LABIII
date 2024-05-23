@@ -1,0 +1,21 @@
+var text = [
+        {
+            "legajo":"",
+            "nombre":"",
+            "saldo":""
+        },
+        {
+            "legajo":"32434",
+            "nombre":"hector",
+            "saldo":2000
+        },
+        {
+            "legajo":"00000",
+            "nombre":"adrian",
+            "saldo":4000
+        },
+        {
+            "legajo":"111111",
+            "nombre":"maria",
+            "saldo":6000
+}]

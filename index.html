@@ -4,22 +4,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LABO III</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header{
+        width: 80%;
+        margin: auto;
+    }
+    header h1{
+        text-align: center;
+    }
+    main div{ 
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        margin-top: 5%;
+        background-color: antiquewhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    main div p{
+        width: 50%;
+        text-align: start;
+        margin: 1%;
+    }
+    nav{
+        width: 80vw;
+        height: 5vh;
+        margin: auto;
+    }
+    a{
+        text-decoration: none;
+        color: #178fb7;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2%;
+    }
+    a:hover{
+        background-color: #178fb7;
+        color: #95f2ff;
+    }
+    ul{
+        list-style: none;
+        background-color: #95f2ff;
+        width: 100%;
+        height: 100%;
+    }
+    li.menu{
+        float: left;
+        width: 25%;
+        height: 100%;
+    }
+    ul.subMenu{
+        width: 20%;
+        height: auto;
+    }
+    nav ul li ul{
+        position: absolute;
+        top: 11%;
+        display: none;
+    }
+    nav ul li:hover > ul{
+        display: block;
+    }
+</style>
 <body>
-    <head>
+    <header>
         <h1>Índice de ejercicios de Laboratorio III 2024</h1>
-    </head>
-    <nav>
-        <ul>
-            <li>
-                <a href="./Html/index.html">HTML</a>
-            </li>
-            <li>
-                <a href="./CSS/index.html">CSS</a>
-            </li>
-            <li>
-                <a href="./JavaScript/index.html">JAVASCRIPT</a>
-            </li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li class="menu">
+                    <a href="./Html/index.html">HTML</a>
+                    <ul class="subMenu">
+                        <li>
+                            <a href="./Html/Http/index.html">HTTP</a>
+                        </li>
+                        <li>
+                            <a href="./Html/Tablas/index.html">Tablas</a>
+                        </li>
+                        <li>
+                            <a href="./Html/Formulario/index.html">Formulario</a>
+                        </li>
+                        <li>
+                            <a href="./Html/Iframe/index.html">Iframe</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="./CSS/index.html">CSS</a>
+                    <ul class="subMenu">
+                        <li>
+                            <a href="./CSS/cssParte1/01CentradoYPadding/index.html">Centrado y Padding</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte1/02DivsPila/index.html">Divs en Pila</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte1/03DivsFila/index.html">Divs en Fila</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte1/04DivsInternosColum/index.html">Divs Internos en Columnas</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte1/05SelectoresEvento/index.html">Selectores de Eventos</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte1/06DivsInternosRelativos/index.html">Divs Internos Relativos</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte2/menuDespegable/index.html">Menú</a>
+                        </li>
+                        <LI>
+                            <a href="./CSS/cssParte2/formulario/index.html">Formulario</a>
+                        </LI>
+                        <li>
+                            <a href="./CSS/cssParte2/tabla/index.html">Tabla</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte2/layoutBasico/index.html">Layout Básico</a>
+                        </li>
+                        <li>
+                            <a href="./CSS/cssParte2/layoutResponsive/index.html">Layout Responsivo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="./JavaScript/index.html">JAVASCRIPT</a>
+                    <ul class="subMenu">
+                        <li><a href="./JavaScript/01_Sentencias/index.html">Sentencias </a></li>
+                        <li><a href="./JavaScript/02_Debugger/index.html">Debugger</a></li>
+                        <li><a href="./JavaScript/03_Evento/index.html">Comando de evento</a></li>
+                        <li><a href="./JavaScript/04_Variables_Simples/index.html">Variables Simples</a></li>
+                        <li><a href="./JavaScript/05_Alcance/index.html">Alcance</a></li>
+                        <li><a href="./JavaScript/06_Arreglos/index.html">Arreglos</a></li>
+                        <li><a href="./JavaScript/07_Operaciones_sobre_input/index.html">Operaciones sobre input</a></li>
+                        <li><a href="./JavaScript/08_Operaciones_entre_imput/index.html">Operaciones entre input</a></li>
+                        <li><a href="./JavaScript/09_Funciones_Compartidas/index.html">Funciones Compartidas</a></li>
+                        <li><a href="./JavaScript/010_Funcion_flecha/index.html">Funciones Flecha</a></li>
+                        <li><a href="./JavaScript/011_Location/index.html">Location</a></li>
+                        <li><a href="./JavaScript/012_Envio_Formulario/index.html">Envio Formulario</a></li>
+                        <li><a href="./JavaScript/013_Variable_Objeto_Datos/index.html">Variables Objetos Datos</a></li>
+                        <li><a href="./JavaScript/014_Validacion_keyUp/index.html">Validación Keyup</a></li>
+                        <li><a href="./JavaScript/015_Form_ABM/index.html">Formulario ABM</a></li>
+                        <li><a href="./JavaScript/016_Cambios_Estilo_Dinamico/index.html">Cambios Estilo Dinámico</a></li>
+                        <li><a href="./JavaScript/017_Creacion_Objetos/index.html">Creacion de Objetos</a></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="./Especiales/index.html">ESPECIALES</a>
+                    <ul class="subMenu">
+                        <li><a href="./Especiales/01_Form/index.html">Form</a></li>
+                        <li><a href="./Especiales/02_Tabla/index.html">Tabla</a></li>
+                        <li><a href="./Especiales/03_Ventana_Modal/index.html">Ventana Modal</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <p>
+                Alumno: Hector Adrian Pacherres Morales
+            </p>
+            <p>
+                Legajo: 15-28567
+            </p>
+        </div>
+    </main>
 </body>
 </html>

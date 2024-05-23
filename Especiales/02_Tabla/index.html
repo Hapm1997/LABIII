@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    img{
+        max-width: 100%;
+    }
+    .centrar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    header{
+        width: 100vw;
+        height: 10vh;
+        background-color: #69d2cd;
+        float: right;
+    }
+    main{
+        width: 100%;
+        height: 90vh;
+        background-color: white;
+        /* overflow: hidden; */
+    }
+    header div:nth-child(1){
+        width: 70%;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        padding-right: 10%;
+        height: 100%;
+        color: #294380;
+        /* display: inline-block; */
+    }
+    header div:nth-child(2){
+        width: 30%;
+        float: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        /* display: inline-block; */
+    }
+    header div:nth-child(2) input{
+        margin: 5%;
+        width: 30%;
+        height: 50%;
+    }
+    footer{
+        width: 100%;
+        height: 10vh;
+        background-color: #69d2cd;
+    }
+    table{
+        width: 100%;
+    }
+    table thead{
+        display: flex;
+        /* width: 100%; */
+    }
+    table thead tr{
+        background-color: #294380;     
+        height: 5vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #f1f6ce;
+    }
+    table thead tr th{
+        width: 20%;
+    }
+    table thead tr th:nth-child(5){
+        width: 20%;
+    }
+    table thead tr th:nth-child(6){
+        width: 20%;
+    }
+    table tbody{
+        text-align: center; 
+        font-size: 22px;
+        color: #b9f1d6;
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    table tbody tr{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    table tbody tr td{
+        width: 20%;
+    }
+    /* table tbody tr td:nth-child(1){
+        width: 20%;
+    }
+    table tbody tr td:nth-child(5){
+        width: 20%;
+    } */
+    table tbody tr td:nth-child(6){
+        display: flex;
+    }
+    table tbody tr:nth-child(odd){
+        background-color: #f1f6ce;
+        color: #294380;
+    }
+    table tbody tr:nth-child(even){
+        background-color: #294380;
+        color: #f1f6ce;
+    }
+    /* td{
+        width: 20%;
+    } */
+</style>
+<body>
+    <header>
+        <div>
+            <h1>Catálogo de Películas</h1>
+        </div>
+        <div>
+            <input type="button" value="Cargar Datos" id="cargar">
+            <input type="button" value="Vaciar Datos" id="vaciar">
+        </div>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Director</th>
+                    <th>Estreno</th>
+                    <th>Duración</th>
+                    <th>Género</th>
+                    <th>Póster</th>
+                </tr>
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+        </table>
+    </main>
+    <footer class="centrar">
+        <h2>Pie de página</h2>
+    </footer>
+    <script src="../catalogo.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        txtCatalogo = text;
+        console.log(txtCatalogo);
+        a = true;
+        function poner(){
+            txtCatalogo.forEach(function(item,indice){
+                var objFila = document.createElement("tr");
+                var objNombre = document.createElement("td");
+                objNombre.setAttribute("value",item.nombre);
+                objNombre.innerHTML=item.nombre;
+                objFila.appendChild(objNombre);
+                var objDirector = document.createElement("td");
+                objDirector.setAttribute("value",item.director);
+                objDirector.innerHTML=item.director;
+                objFila.appendChild(objDirector);
+                var objEstreno = document.createElement("td");
+                objEstreno.setAttribute("value",item.estreno);
+                objEstreno.innerHTML=item.estreno;
+                objFila.appendChild(objEstreno);
+                var objDuracion = document.createElement("td");
+                objDuracion.setAttribute("value",item.duracion);
+                objDuracion.innerHTML=item.duracion;
+                objFila.appendChild(objDuracion);
+                var objGenero = document.createElement("td");
+                objGenero.setAttribute("value",item.geenero);
+                objGenero.innerHTML=item.geenero;
+                objFila.appendChild(objGenero);
+
+                var objPoster = document.createElement("td");
+                var objImg = document.createElement("img");
+                // objPoster.setAttribute("value",item.poster);
+                // objPoster.innerHTML=item.poster;
+                objImg.setAttribute('src',item.poster);
+                objImg.innerHTML=item.poster;
+                objPoster.appendChild(objImg);
+                objFila.appendChild(objPoster);
+                // objImg.setAttribute('src',item.poster);
+                document.getElementById("tabla").appendChild(objFila);
+            });
+            
+        }
+        document.getElementById("cargar").addEventListener("click",function(){
+            if(a == true){
+                poner();
+                a = false;
+            }
+            
+        })
+        $(document).ready(function(){
+            $("#vaciar").click(function(){
+                $("#tabla").empty();
+                a =true;
+            });
+        });
+    </script>
+</body>
+</html>

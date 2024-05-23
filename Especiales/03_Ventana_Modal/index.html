@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url('./peliculas.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    div.inicio{
+        width: 60vw;
+        height: 50vh;
+        margin: auto;
+        background-color: #b7ae8f;    
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0% , 50%);
+    }
+    div h1{
+        margin: 2%;
+        color: #4a362f;
+    }
+    div input{
+        width: 20%;
+        height: 10%;
+        margin: 2%;
+    }
+    form{
+        width: 70vw;
+        height: 60vh;
+        margin: auto;
+        position: fixed;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        background-color: #978f84;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center ;
+        justify-content: center;
+        visibility: hidden;
+    }
+    form div.formulario{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #121210;
+    
+    }
+    form div select{
+        width: 50%;
+    }
+    form div input{
+        width: 50%;
+    }
+    form div:nth-child(1){
+        background-color: #121210;
+        width: 100%;
+        height: 10%;
+        position: relative;
+        top: -10%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        color: #978f84;
+    }
+    form div:nth-child(7){
+        width: 100%;
+        height: 10%;
+        position: relative;
+        bottom: -10%;
+        background-color: #121210;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #b7ae8f;
+        font-size: 30px;
+    }
+    img{
+        max-width: 70%;       
+    }
+    form div:nth-child(1) p {
+        text-align: center;
+        /* margin-right: 40%; */
+        width: 90%;
+        float: left;
+        font-size: 35px;
+    }
+    form div:nth-child(1) div{
+        width: 5%;
+        height: 100%;
+        float: right;
+        background-color: #121210;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form div:nth-child(1) div:hover{
+        background-color: #b7ae8f;
+    }
+
+    form div:nth-child(1) div:hover{
+        cursor: pointer;
+    }
+    .cerrar{
+        visibility: hidden;
+    }
+    .abrir{
+        visibility: visible;
+    }
+    div.ventana{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        opacity: 0.7;
+        background-color: #d9d9db;
+        visibility: hidden;
+    }
+</style>
+<body>
+    <div class="inicio">
+        <h1>
+            ¿Desea suscribirse a nuestra página?
+        </h1>
+        <input type="button" id="susc" value="Suscribirse">
+    </div>
+    <div id="cont" class="ventana"></div>
+    <form id="miForm">
+        <div>
+            <p>Suscribirse</p>
+            <div id="equis"><img src="https://static.vecteezy.com/system/resources/thumbnails/017/785/303/small/creative-wrong-icon-3d-render-png.png" alt="cerrar"></div>
+        </div>
+        <div class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="formulario">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+        <div class="formulario">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+        </div>
+        <div class="formulario">
+            <label for="fav">Película Favorita:</label>
+            <Select id="fav" name="fav" required></Select>
+        </div>
+        <div class="formulario">
+            <input type="button" value="Enviar" id="enviar">
+        </div>
+        <div>
+            <p>Gracias</p>
+        </div>
+    </form>
+    <script src="../catalogo.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        textoCadena = text;
+        function crear(){
+            textoCadena.forEach(function(item,indice){
+                var objOpcion = document.createElement("option");
+                objOpcion.setAttribute("value",item.nombre);
+                objOpcion.innerHTML = item.nombre;
+                document.getElementById("fav").appendChild(objOpcion);
+            })
+        }
+        crear();
+        document.getElementById("enviar").addEventListener("click",function(){
+            if(document.getElementById("miForm").checkValidity()){
+                var confirma = confirm("¿Estas segro de enviar el formulario?");
+                if(confirma){
+                    document.getElementById("miForm").method = "get";
+                    document.getElementById("miForm").action ="./respuesta.html";
+                    document.getElementById("miForm").submit();
+                }
+            }else{
+                alert("Complete todos los requisitos");
+            }
+        })
+        document.getElementById("susc").addEventListener("click",function(){
+            document.getElementById("miForm").className="abrir";
+            document.getElementById("cont").style.visibility="visible";
+        })
+        document.getElementById("equis").addEventListener("click",function(){
+            document.getElementById("miForm").className="cerrar";
+            document.getElementById("cont").style.visibility="hidden"
+        })
+    </script>
+</body>
+</html>
